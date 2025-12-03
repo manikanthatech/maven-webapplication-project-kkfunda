@@ -16,3 +16,6 @@ jobs:
           cache: maven
       - name: install maven
         run: sudo yum install maven -y
+
+      - name: build artiface
+        run: mvn clean package
