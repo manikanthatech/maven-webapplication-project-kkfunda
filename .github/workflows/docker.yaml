@@ -1,0 +1,18 @@
+name: docker image creation
+
+on:
+  workflow_dispatch:
+jobs:
+  create_D-IMage:
+    runs-on: self-hosted
+    steps:
+      - name: checkout the code
+        uses: actions/checkout@v4
+      - name: install java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+      - name: install maven
+        run: sudo yum install maven -y
