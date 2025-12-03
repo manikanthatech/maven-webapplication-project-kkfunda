@@ -19,3 +19,8 @@ jobs:
 
       - name: build artiface
         run: mvn clean package
+  sonarqube_report:
+    runs-on: self-hosted
+    steps:
+      - name: generaate sonarqube
+        run: mvn sonar:sonar
