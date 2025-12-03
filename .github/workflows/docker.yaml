@@ -21,6 +21,7 @@ jobs:
         run: mvn clean package
   sonarqube_report:
     runs-on: self-hosted
-    steps:
+    needs: create_D-IMage
+    steps:    
       - name: generaate sonarqube
         run: mvn sonar:sonar
